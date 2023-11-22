@@ -1,11 +1,21 @@
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
-import Serector from './component/serector'
-
+import Page1 from './component/page1'
+import Page2 from './component/page2'
+import Link from 'next/link'
+import { useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [Pagenum, setPagenum] = useState(0)
+  function NumChange(newNum) {
+    setPagenum(newNum)
+  }
+  const Pages = [
+    <div key="123"><Page1 NumChange={NumChange}/></div>,
+    <div key="124"><Page2/></div>
+  ]
   return (
     <>
       <Head>
@@ -15,7 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Serector/>
+        <div>{Pages[Pagenum]}</div>
       </main>
     </>
   )
