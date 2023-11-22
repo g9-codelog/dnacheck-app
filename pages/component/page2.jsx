@@ -1,9 +1,12 @@
 import Serector from "./serector";
 
-function Page2() {
+function Page2(props) {
+    function Next() {
+        props.Numchanges(2)
+    }
     return (
         <>
-            <button>ボタン２</button>
+            <button onClick={Next}>ボタン２</button>
         </>
     )
 }

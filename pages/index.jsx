@@ -13,8 +13,9 @@ export default function Home() {
     setPagenum(newNum)
   }
   const Pages = [
-    <div key="123"><Page1 NumChange={NumChange}/></div>,
-    <div key="124"><Page2/></div>
+    <div key="123"><Page1 NumChanges={NumChange}/></div>,
+    <div key="124"><Page2 Numchanges={NumChange}/></div>,
+    <div key="125">終了</div>
   ]
   return (
     <>
